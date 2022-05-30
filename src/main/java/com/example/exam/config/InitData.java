@@ -2,7 +2,6 @@ package com.example.exam.config;
 
 import com.example.exam.entity.Rider;
 import com.example.exam.entity.Team;
-import com.example.exam.repository.TeamRepository;
 import com.example.exam.service.RiderService;
 import com.example.exam.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,6 @@ public class InitData implements CommandLineRunner {
   @Autowired
   TeamService teamService;
 
-  @Autowired
-  TeamRepository teamRepository;
 
   @Override
   public void run(String... args) throws Exception {
@@ -52,13 +49,14 @@ public class InitData implements CommandLineRunner {
     team.setRiders(riders);
     team.setTeamCountry("DK");
     team.setTeamName("Team Easy On");
-    teamRepository.save(team);
+    teamService.saveTeam(team);
 
     Team team1 = new Team();
     team1.setRiders(riders1);
     team1.setTeamCountry("DK");
     team1.setTeamName("Team 2");
-    teamRepository.save(team1);
+    teamService.saveTeam(team1);
+
 
 
   }

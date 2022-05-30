@@ -6,8 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Rider {
@@ -20,9 +22,14 @@ public class Rider {
   private LocalDate riderBirthDate;
   private String riderCountry;
 
+
   @ManyToOne
   @JoinColumn(name = "team_id")
   private Team team;
+
+  @OneToMany
+  @JoinColumn(name = "rider_id")
+  private List<Result> resultList;
 
   public int getRiderId() {
     return riderId;
@@ -66,5 +73,13 @@ public class Rider {
 
   public void setRiderCountry(String riderCountry) {
     this.riderCountry = riderCountry;
+  }
+
+  public List<Result> getResultList() {
+    return resultList;
+  }
+
+  public void setResultList(List<Result> resultList) {
+    this.resultList = resultList;
   }
 }
