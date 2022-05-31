@@ -177,6 +177,16 @@ public class InitData implements CommandLineRunner {
     team2.setTeamName("Team 3");
     teamService.saveTeam(team2);
 
+    Team team3 = new Team();
+    team3.setTeamCountry("KR");
+    team3.setTeamName("Team 4");
+    teamService.saveTeam(team3);
+
+    Team team4 = new Team();
+    team4.setTeamCountry("KR");
+    team4.setTeamName("Team 5");
+    teamService.saveTeam(team4);
+
     Result result = new Result();
     result.setMountainPoint(2);
     result.setSprintPoint(3);
@@ -464,6 +474,30 @@ public class InitData implements CommandLineRunner {
     result35.setStage(3);
     result35.setTime(LocalTime.parse("02:05:11"));
     resultService.saveResult(result35);
+
+    Result result42= new Result();
+    result42.setMountainPoint(2);
+    result42.setSprintPoint(3);
+    result42.setRider(rider12);
+    result42.setStage(1);
+    result42.setTime(LocalTime.parse("01:12:01"));
+    resultService.saveResult(result42);
+
+    Result result43 = new Result();
+    result43.setMountainPoint(3);
+    result43.setSprintPoint(1);
+    result43.setRider(rider12);
+    result43.setStage(2);
+    result43.setTime(LocalTime.parse("01:33:01"));
+    resultService.saveResult(result34);
+
+    Result result44 = new Result();
+    result44.setMountainPoint(1);
+    result44.setSprintPoint(2);
+    result44.setRider(rider12);
+    result44.setStage(3);
+    result44.setTime(LocalTime.parse("02:05:11"));
+    resultService.saveResult(result44);
 
     Result result36 = new Result();
     result36.setMountainPoint(1);
