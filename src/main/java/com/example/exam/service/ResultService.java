@@ -16,4 +16,8 @@ public class ResultService {
   public List<Result> getAllResults() {
     return  resultRepository.findAll();
   }
+
+  public void saveResult(Result result){
+    resultRepository.save(result);
+  }
 }

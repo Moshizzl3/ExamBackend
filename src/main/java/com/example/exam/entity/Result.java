@@ -1,5 +1,6 @@
 package com.example.exam.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Entity;
@@ -16,9 +17,11 @@ public class Result {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int resultId;
-  private int point;
+  private int sprintPoint;
+  private int mountainPoint;
+  @JsonFormat(pattern = "HH:mm:ss")
   private LocalTime time;
-  private String stage;
+  private int stage;
 
   @ManyToOne
   @JsonIgnore
@@ -29,12 +32,20 @@ public class Result {
     return resultId;
   }
 
-  public int getPoint() {
-    return point;
+  public int getSprintPoint() {
+    return sprintPoint;
   }
 
-  public void setPoint(int point) {
-    this.point = point;
+  public void setSprintPoint(int sprintPoint) {
+    this.sprintPoint = sprintPoint;
+  }
+
+  public int getMountainPoint() {
+    return mountainPoint;
+  }
+
+  public void setMountainPoint(int mountainPoint) {
+    this.mountainPoint = mountainPoint;
   }
 
   public LocalTime getTime() {
@@ -53,11 +64,11 @@ public class Result {
     this.rider = rider;
   }
 
-  public String getStage() {
+  public int getStage() {
     return stage;
   }
 
-  public void setStage(String stage) {
+  public void setStage(int stage) {
     this.stage = stage;
   }
 }

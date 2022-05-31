@@ -30,6 +30,10 @@ public class RiderService {
     return riderRepository.findByTeamTeamId(id);
   }
 
+  public List<Rider> getAllRidersByStage(int id) {
+    return riderRepository.findByResultListStage(id);
+  }
+
   public void deleteRiderById(int id) {
     riderRepository.deleteById(id);
   }
@@ -37,4 +41,5 @@ public class RiderService {
   public Optional<Rider> findById(int id) {
     return riderRepository.findById(id);
   }
+
 }

@@ -34,9 +34,15 @@ public class RiderRestController {
     return riderService.getAllRiders();
   }
 
+
   @GetMapping("/all-riders-by-team/{id}")
   public List<Rider> getAllRidersByTeam(@PathVariable int id){
     return riderService.getAllRidersByTeam(id);
+  }
+
+  @GetMapping("/all-riders-by-stage/{id}")
+  public List<Rider> getAllRidersByStage(@PathVariable int id){
+    return riderService.getAllRidersByStage(id);
   }
 
   @DeleteMapping("/{id}")
