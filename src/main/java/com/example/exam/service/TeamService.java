@@ -5,6 +5,8 @@ import com.example.exam.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TeamService {
 
@@ -13,5 +15,9 @@ public class TeamService {
 
   public void saveTeam(Team team) {
      teamRepository.save(team);
+  }
+
+  public List<Team> findAllTeams() {
+    return teamRepository.findAll();
   }
 }

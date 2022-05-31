@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RiderService {
@@ -28,4 +29,17 @@ public class RiderService {
   public List<Rider> getAllRidersByTeam(int id) {
     return riderRepository.findByTeamTeamId(id);
   }
+
+  public List<Rider> getAllRidersByStage(int id) {
+    return riderRepository.findByResultListStage(id);
+  }
+
+  public void deleteRiderById(int id) {
+    riderRepository.deleteById(id);
+  }
+
+  public Optional<Rider> findById(int id) {
+    return riderRepository.findById(id);
+  }
+
 }
